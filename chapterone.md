@@ -66,3 +66,90 @@ sum(x == 1) / length(x)
 Suppose that Player 1 has two armies each in countries C<sub>1</sub>, C<sub>2</sub>, C<sub>3</sub> and C<sub>4</sub>, that Player 2 has one army each in countries B<sub>1</sub>, B<sub>2</sub>, B<sub>3</sub> and B<sub>4</sub>, and that country C<sub>i</sub> attacks country B<sub>i</sub>. What is the chance that Player 1 will be successful in at least one of the four attacks?
 
 <img src="https://latex.codecogs.com/gif.latex?P($at&space;least&space;one&space;win$)&space;=&space;1&space;-&space;P($no&space;wins$)&space;\\&space;P($at&space;least&space;one&space;win$)&space;=&space;1&space;-&space;(0.4166667)^4&space;=&space;0.884211" title="P($at least one win$) = 1 - P($no wins$) \\ P($at least one win$) = 1 - (0.4166667)^4 = 0.884211" />
+
+#### Q4
+Justify the last step of Equation 1.2.
+
+For any fixed number _a_:
+
+<img src="https://latex.codecogs.com/gif.latex?\frac{d}{db}P[X&space;\in&space;(a,&space;b)]&space;=&space;\frac{d}{db}&space;\int_{a}^{b}&space;f_X(x)&space;dx&space;\\&space;=&space;\frac{d}{db}[F_X(b)&space;-&space;F_X(a)]&space;\\&space;=&space;F_X'(b)\frac{d}{db}(b)&space;-&space;F_X'(a)\frac{d}{db}(a)&space;\\&space;=&space;f_X(b)&space;.&space;(1)&space;-&space;f_X(a)&space;.&space;(0)$,&space;since&space;$F'&space;=&space;f&space;\\&space;=&space;f_X(b)" title="\frac{d}{db}P[X \in (a, b)] = \frac{d}{db} \int_{a}^{b} f_X(x) dx \\ = \frac{d}{db}[F_X(b) - F_X(a)] \\ = F_X'(b)\frac{d}{db}(b) - F_X'(a)\frac{d}{db}(a) \\ = f_X(b) . (1) - f_X(a) . (0)$, since $F' = f \\ = f_X(b)" />
+
+Justify the last step of the proof of Theorem 1.1.
+
+Let _X_ be a random variable with pdf _p_<sub>X</sub>. Let _g_ be a differentiable, monotonic, invertible function and define _Z = g(X)_. Then the probability density function of _Z_ is:
+
+![Q1.4.b](latex/1-4-b.png)
+
+Prove Theorem 1.1 when _g_ is a decreasing function.
+
+![Q1.4.c](latex/1-4-c.png)
+
+#### Q5
+_Y_ is a random variable. _Y_ ∈ (-1, 1). The pdf is _p(y) = ky_<sup>2</sup> for some constant, _k_.
+
+Find _k_.
+
+![Q1.5.a](latex/1-5-a.png)
+
+Use `R` to plot the pdf.
+
+```r
+eq = function (x) {3 * x * x / 2}
+plot(eq, -1, 1)
+```
+
+![Q1.5.b](latex/1-5-b.png)
+
+Let _Z = -Y_. Find the pdf of _Z_.
+
+![Q1.5.c](latex/1-5-c.png)
+
+#### Q6
+_U_ is a random variable on the interval [0, 1], _p_<sub>U</sub> = 1.
+
+_V = U_^2. On what interval does _V_ live? Plot _V_ as a function of _U_. Find the pdf of _V_. Plot _p_<sub>V</sub>_(v)_ as a function of _v_.
+
+_V_ ∈ [0, 1].
+
+![Q1.6.a](latex/1-6-a.png)
+
+```r
+v.u = function (u) {u * u}
+p.v = function (v) {1 / (2 * sqrt(v))}
+par(mfrow = c(2, 1))
+plot(v.u, 0, 1)
+plot(p.v, 0, 1)
+```
+
+![Q1.6.a-graph](latex/1-6-a-graph.png)
+
+_W = 2U_. On what interval does _W_ live? Plot _W_ as a function of _U_. Find the pdf of _W_. Plot _p_<sub>W</sub>_(w)_ as a function of _w_.
+
+_W_ ∈ [0, 2].
+
+![Q1-6-b](latex/1-6-b.png)
+
+```r
+w.u = function (u) {2*u}
+par(mfrow = c(2, 1))
+plot(w.u, 0, 2)
+plot(c(0, 2), c(0.5, 0.5), xlab="u", ylab="p(w)", type="l")
+```
+
+![Q1-6-b-graph](latex/1-6-b-graph.png)
+
+_X_ = -log(_U_). On what interval does _X_ live? Plot _X_ as a function of _U_. Find the pdf of _X_. Plot _p_<sub>X</sub>_(x)_ as a function of _x_.
+
+_X_ ∈ [0, ∞)
+
+![Q1-6-c](latex/1-6-c.png)
+
+```r
+x.u = function (u) {-log(u)}
+p.x = function (x) {exp(-x)}
+par(mfrow = c(2, 1))
+plot(x.u, 0, 100)
+plot(p.x, 0, 100)
+```
+
+![Q1-6-c-graph](latex/1-6-c-graph.png)
