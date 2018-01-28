@@ -153,3 +153,18 @@ plot(p.x, 0, 100)
 ```
 
 ![Q1-6-c-graph](latex/1-6-c-graph.png)
+
+####Q7
+Let _X_ ~ Exp(_λ_) and let _Y_ = _cX_ for some constant _c_.
+
+Write down the density of _X_.
+
+![Q1-7-a](latex/1-7-a.png)
+
+Find the density of _Y_.
+
+![Q1-7-b](latex/1-7-b.png)
+
+Name the distribution of _Y_.
+
+_Y_ ~ Exp(_cλ_)
