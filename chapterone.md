@@ -154,7 +154,7 @@ plot(p.x, 0, 100)
 
 ![Q1-6-c-graph](latex/1-6-c-graph.png)
 
-####Q7
+#### Q7
 Let _X_ ~ Exp(_λ_) and let _Y_ = _cX_ for some constant _c_.
 
 Write down the density of _X_.
@@ -167,4 +167,31 @@ Find the density of _Y_.
 
 Name the distribution of _Y_.
 
-_Y_ ~ Exp(_cλ_)
+_Y_ ok~ Exp(_cλ_)
+
+#### Q8
+Consider a random variable _Y_ with probability density function (pdf) given by
+
+![Q1-8](latex/1-8.png)
+
+Find _c_.
+
+![Q1-8-a](latex/1-8-a.png)
+
+Find the expected value and variance of _Y_.
+
+_Y_ ~ N(0, 1)
+
+E[_Y_] = 0
+
+SD(_Y_) = 1, so Var(_Y_) = 1.
+
+What is the pdf of _Y_<sup>2</sup>?
+
+![Q1-8-c](latex/1-8-c.png)
+
+However, this pdf does not integrate to 1:
+
+![Q1-8-c-error](latex/1-8-c-error.png)
+
+Any pointers as to where I have erred would be appreciated!
